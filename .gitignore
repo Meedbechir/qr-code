@@ -1,0 +1,91 @@
+# .gitignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Environment files
+.env
+.venv
+env/
+venv/
+ENV/
+envv/
+my-env/
+
+# Django specific
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Your apps
+# Replace 'app1' and 'app2' with the names of your apps
+articles/migrations/
+app2/migrations/
+
+# Static files
+static/
+
+# Media files
+media/
+
+# Templates
+templates/
+
+# Cache
+cache/
+
+# Sessions
+sessions/
+
+# Gunicorn
+gunicorn/
+
+# Celery
+celery/
+
+# Redis
+redis/
+
+# Elasticsearch
+elasticsearch/
+
+# Kafka
+kafka/
+
+# RabbitMQ
+rabbitmq/
+
+# AWS
+aws/
+
+# Azure
+azure/
+
+# GCP
+gcp/
+
+# Heroku
+heroku/
+
+# DigitalOcean
+digitalocean/
+
+# Misc
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.egg-info/
+dist/
+build/
