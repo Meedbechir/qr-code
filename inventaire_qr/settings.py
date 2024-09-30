@@ -33,6 +33,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -73,20 +74,21 @@ WSGI_APPLICATION = 'inventaire_qr.wsgi.application'
 # }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'cnc-2024',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Moh@med9394@',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     },
-# }
-
 DATABASES = {
-    "default": dj_database_url.parse("postgresql://meed:Wj7XlEvKwObLTBYJtXonpLLRTdQmBAGT@dpg-crolrd2j1k6c739jv8sg-a.oregon-postgres.render.com/qrcode_ve31")
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cnc-qrcode',
+        'USER': 'postgres',
+        'PASSWORD': 'Moh@med9394@',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
 }
+
+
+# DATABASES = {
+#     "default": dj_database_url.parse("postgresql://meed:Wj7XlEvKwObLTBYJtXonpLLRTdQmBAGT@dpg-crolrd2j1k6c739jv8sg-a.oregon-postgres.render.com/qrcode_ve31")
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -124,6 +126,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -132,6 +139,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-ALLOWED_HOSTS = [
-    'qr-code-vsox.onrender.com'
-]
+# ALLOWED_HOSTS = [
+#     'qr-code-vsox.onrender.com',
+#     'http://127.0.0.1:8000',
+#     "http://127.0.0.1/"
+# ]
