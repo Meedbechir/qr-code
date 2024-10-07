@@ -22,7 +22,7 @@ class Article(models.Model):
         super().save(*args, **kwargs)
 
         if not self.qr_code:
-            site_url = 'https://qr-code-fnjg.onrender.com/'  
+            site_url = 'https://qr-code-fnjg.onrender.com'  
             try:
                 detail_url = site_url + reverse('article-detail', args=[self.id])
             except Exception as e:
