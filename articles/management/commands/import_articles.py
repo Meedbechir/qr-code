@@ -64,7 +64,7 @@ class Command(BaseCommand):
             else:
                 self.stdout.write(self.style.WARNING(f'Article "{designation}" déjà existant.'))
 
-            site_url = 'http://127.0.0.1:8000'
+            site_url = 'https://qr-code-fnjg.onrender.com/'
             try:
                 detail_url = site_url + reverse('article-detail', args=[article.id])
             except Exception as e:
