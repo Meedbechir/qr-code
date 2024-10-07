@@ -140,8 +140,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# ALLOWED_HOSTS = [
-#     'qr-code-vsox.onrender.com',
-#     'http://127.0.0.1:8000',
-#     "http://127.0.0.1/"
-# ]
+ALLOWED_HOSTS = [
+    'qr-code-fnjg.onrender.com',
+    'https://qr-code-fnjg.onrender.com/',
+    'http://127.0.0.1:8000',
+    "http://127.0.0.1/"
+]
